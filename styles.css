@@ -1,125 +1,140 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: roboto;
-    background-image: url("img/backgroung_geral.gif");
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-h1,
-h3,
-p {
-    text-align: center;
-    color: bisque;
-    font-family: roboto;
+body {
+    background: linear-gradient(120deg, #151615, #4a6e80);
+    background-image: url('/img/backgroung_geral.gif');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-h1 {
-    margin-top: 40px;
-    margin-bottom: 20px;
+header nav {
+    width: 100%;
+    padding: 20px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(243, 240, 240, 0.731);
+}
+
+header nav h1 {
+    color: #97bce1;
+    font-size: 2.5rem;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 0;
+    width: 90%;
+    max-width: 1200px;
 }
 
 .card {
+    perspective: 1000px; /* Define a profundidade para o efeito 3D */
+    width: 150px;
+    margin: 20px;
+}
 
-    display: inline-block;
-    width: 20%;
-    margin: 25px;
-    padding-right: 35px;
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 6px 15px rgba(240, 233, 233, 0.1);
+    border-radius: 10px;
+}
+
+.card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card-front {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-back {
+    background-color: #494848;
+    color: #97bce1;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 1.3rem;
 }
 
 .card-image {
     height: 200px;
-    background-size: cover;
-}
-
-.btn {
-    display: block;
-    background-color: #4A87E8;
-    color: bisque;
-    margin-top: 20px;
-    text-decoration: none;
-    padding: 10px;
-    border: 2px solid transparent;
-    font-weight: bold;
-    transition: 5s;
-    border-radius: 5px;
-}
-
-.btn.houver {
-    background-color: #070404;
-    color: #4A87E8;
-    border-color: #e1e7e9;
 }
 
 #aries {
-
     background-image: url("img/aries.png");
-    width: 270px;
-    border-radius: 300px
 }
 
 #touro {
     background-image: url("img/touro.png");
-    width: 270px;
-    border-radius: 300px
 }
 
 #gemeos {
     background-image: url("img/gemeos.png");
-    width: 270px;
-    border-radius: 300px
 }
 
 #cancer {
     background-image: url("img/cancer.png");
-    width: 270px;
-    border-radius: 300px
 }
+
+/* Continue adicionando os outros signos, seguindo o mesmo padrão */
 
 #leao {
     background-image: url("img/leao.png");
-    width: 270px;
-    border-radius: 300px
 }
 
 #virgem {
     background-image: url("img/virgem.png");
-    width: 270px;
-    border-radius: 300px
 }
 
 #libra {
     background-image: url("img/libra.png");
-    width: 270px;
-    border-radius: 300px
 }
 
 #escorpiao {
     background-image: url("img/escorpiao.png");
-    width: 270px;
-    border-radius: 300px
 }
 
 #sagitario {
-    background-image: url("img/sargitario.png");
-    width: 270px;
-    border-radius: 300px
+    background-image: url("img/sargitario.PNG");
 }
 
 #capricornio {
     background-image: url("img/capricornio.png");
-    width: 270px;
-    border-radius: 300px
 }
 
 #aquario {
     background-image: url("img/aquario.png");
-    width: 270px;
-    border-radius: 300px
 }
 
 #peixes {
     background-image: url("img/peixes.png");
-    width: 270px;
-    border-radius: 300px;
 }
